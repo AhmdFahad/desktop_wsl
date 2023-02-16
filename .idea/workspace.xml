@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d8a893-3aff-4ecd-9c92-855d7acf2d4d" name="Changes" comment="image-path">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ahamdah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ahamdah/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ahamdah/TrayFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ahamdah/TrayFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="07d8a893-3aff-4ecd-9c92-855d7acf2d4d" name="Changes" comment="image-path" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +123,7 @@
       <workItem from="1676527795821" duration="3623000" />
       <workItem from="1676535627622" duration="5994000" />
       <workItem from="1676572219809" duration="2446000" />
-      <workItem from="1676574706822" duration="2337000" />
+      <workItem from="1676574706822" duration="2904000" />
     </task>
     <servers />
   </component>
