@@ -5,94 +5,67 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class TrayFrame {
-    private final  SystemTray tray ;
+    private final SystemTray tray ;
     private final TrayIcon trayIcon;
     private final MenuItem exit;
-    private  Image image;
-    private PopupMenu popupMenu;
+    private final PopupMenu popupMenu;
     private List<Distribution> menuItems;
-    public TrayFrame( )  {
-
+    public TrayFrame(List<Distribution> menuItems)  {
         this.tray=SystemTray.getSystemTray();
         this.popupMenu = new PopupMenu();
-        this.image = Toolkit.getDefaultToolkit().getImage("src/main/resources/icon.png");
         this.exit=new MenuItem("Exit");
-        this.trayIcon = new TrayIcon(image, "Desktop-wsl", popupMenu);
+        this.trayIcon = new TrayIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/icon.png"))).getImage(), "Desktop-wsl", popupMenu);
         this.trayIcon.setImageAutoSize(true);
-
 
         try {
             tray.add(trayIcon);
         } catch (AWTException e) {
             System.err.println("Could not add tray icon");
         }
-
-
-        List<Distribution>menuItems= null;
-        try {
-            menuItems = Service.listAll();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        List<Distribution> finalMenuItems = menuItems;
-        load(tray,menuItems);
+        load();
         addAction();
-
     }
-    public void load(SystemTray tray,List<Distribution> menuItems){
-        popupMenu.removeAll();
-        if (SystemTray.isSupported() != true) {
-            System.out.println("Not Subported");
-        }
+    public void load(){
         try {
             menuItems=Service.listAll();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        popupMenu.removeAll();
         popupMenu.addSeparator();
 
         for (Distribution item:
                     menuItems) {
             CheckboxMenuItem checkboxMenuItem=new CheckboxMenuItem();
             checkboxMenuItem.setLabel(item.getName());
-            if(item.getState().toString().equals("Running"))checkboxMenuItem.setState(true);
-                else checkboxMenuItem.setState(false);
-            checkboxMenuItem.addItemListener(new ItemListener() {
-                    @Override
-                    public void itemStateChanged(ItemEvent e) {
-                        if(checkboxMenuItem.getState() != true){
-                            try {
-                                Service.turnOff(checkboxMenuItem.getLabel());
-                                JOptionPane.showMessageDialog(null, "Shutdown :"+checkboxMenuItem.getLabel());
-                                checkboxMenuItem.setState(false);
-                            } catch (IOException ex) {
-                                throw new RuntimeException(ex);
-                            } catch (InterruptedException ex) {
-                                throw new RuntimeException(ex);
-                            }
-
-                        }else {
-                            try {
-                                Service.turnOn(checkboxMenuItem.getLabel());
-                                JOptionPane.showMessageDialog(null, "Run  :"+checkboxMenuItem.getLabel());
-                                checkboxMenuItem.setState(true);
-                            } catch (IOException ex) {
-                                throw new RuntimeException(ex);
-                            } catch (InterruptedException ex) {
-                                throw new RuntimeException(ex);
-                            }
-                        }
-
+            checkboxMenuItem.setState(item.getState().equals("Running"));
+            checkboxMenuItem.addItemListener(e -> {
+                if(!checkboxMenuItem.getState()){
+                    try {
+                        Service.turnOff(checkboxMenuItem.getLabel());
+                        JOptionPane.showMessageDialog(null, "Shutdown :"+checkboxMenuItem.getLabel());
+                        checkboxMenuItem.setState(false);
+                    } catch (IOException | InterruptedException ex) {
+                        throw new RuntimeException(ex);
                     }
-                });
+
+                }else {
+                    try {
+                        Service.turnOn(checkboxMenuItem.getLabel());
+                        JOptionPane.showMessageDialog(null, "Run  :"+checkboxMenuItem.getLabel());
+                        checkboxMenuItem.setState(true);
+                    } catch (IOException | InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+
+            });
 
             popupMenu.add(checkboxMenuItem);
         }
@@ -106,7 +79,8 @@ public class TrayFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     List<Distribution> finalMenuItems = menuItems;
-                    load(tray, finalMenuItems);
+                    load();
+                    System.out.println(Arrays.toString(finalMenuItems.toArray()));
                 }
 
                 @Override
@@ -127,13 +101,7 @@ public class TrayFrame {
 
                 }
             });
-        
-        exit.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.exit(0);
-                }
-            });
+        exit.addActionListener(e -> System.exit(0));
         }
 
 }

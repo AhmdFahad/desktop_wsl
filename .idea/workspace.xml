@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="desktop_wsl:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d8a893-3aff-4ecd-9c92-855d7acf2d4d" name="Changes" comment="">
+    <list default="true" id="07d8a893-3aff-4ecd-9c92-855d7acf2d4d" name="Changes" comment="image-path">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ahamdah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ahamdah/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ahamdah/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ahamdah/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ahamdah/TrayFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ahamdah/TrayFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +35,9 @@
     <setting file="jar://$USER_HOME$/.jdks/openjdk-19.0.2/lib/src.zip!/java.desktop/java/awt/MenuComponent.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.jdks/openjdk-19.0.2/lib/src.zip!/java.desktop/java/awt/PopupMenu.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.jdks/openjdk-19.0.2/lib/src.zip!/java.desktop/java/beans/PropertyChangeListener.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/ahamdah/Distribution.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/ahamdah/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/ahamdah/Service.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,23 +55,25 @@
   <component name="ProjectId" id="2Lj1rn0U7EggUC0mROks7gXnTzH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/L X D/IdeaProjects/desktop_wsl",
+    "last_opened_file_path": "C:/Users/L X D/IdeaProjects/desktop_wsl/src/main/resources/icon.png",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "project.scopes",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -79,6 +88,8 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\L X D\IdeaProjects\desktop_wsl\src\main\resources" />
+      <recent name="C:\Users\L X D\IdeaProjects\desktop_wsl\src\main\java\org\ahamdah\res" />
+      <recent name="C:\Users\L X D\IdeaProjects\desktop_wsl\src\main\java\org\ahamdah" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,7 +126,9 @@
       <workItem from="1676449550563" duration="9160000" />
       <workItem from="1676476124884" duration="8568000" />
       <workItem from="1676527795821" duration="3623000" />
-      <workItem from="1676535627622" duration="4038000" />
+      <workItem from="1676535627622" duration="5994000" />
+      <workItem from="1676572219809" duration="2446000" />
+      <workItem from="1676574706822" duration="2337000" />
     </task>
     <servers />
   </component>
@@ -127,11 +140,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="image-path" />
+    <option name="LAST_COMMIT_MESSAGE" value="image-path" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

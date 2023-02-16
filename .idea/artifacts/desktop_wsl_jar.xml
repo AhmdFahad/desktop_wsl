@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="desktop_wsl:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/desktop_wsl_jar</output-path>
+    <root id="archive" name="desktop_wsl.jar">
+      <element id="module-output" name="desktop_wsl" />
+      <element id="module-source" name="desktop_wsl" />
+    </root>
+  </artifact>
+</component>
